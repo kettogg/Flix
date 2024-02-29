@@ -40,6 +40,6 @@ def get_recommendations(title):
 
 def main():
     # front-end plus function call
-    get_recommendations('Avatar')
+    print(get_recommendations('Avatar'))
 
 main()

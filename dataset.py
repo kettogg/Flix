@@ -47,9 +47,9 @@ def create_word_soup(x):
 def dataset_preparation():
     # Both dataset files are downloaded from https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata?resource=download
 
-    df1=pd.read_csv('.datasets/tmdb_5000_credits.csv',engine='python',error_bad_lines=False)
+    df1=pd.read_csv('datasets/tmdb_5000_credits.csv',engine='python')
     # tmbd_5000_credits.csv has the attributes movie_id,title,cast,crew
-    df2=pd.read_csv('.datasets/tmdb_5000_movies.csv',engine='python',error_bad_lines=False)
+    df2=pd.read_csv('datasets/tmdb_5000_movies.csv',engine='python')
     # tmbd_5000_credits.csv has the attributes budget,genres,homepage,id,keywords,original_language,original_title,overview,popularity,production_companies,production_countries,release_date,revenue,runtime,spoken_languages,status,tagline,title,vote_average,vote_count
 
     # After analysis we see that columns 'homepage', 'tagline', 'runtime', 'overview' have NAN values, so we drop these attributes
@@ -68,7 +68,7 @@ def dataset_preparation():
         df2[feature] = df2[feature].apply(literal_eval)
 
     # Create new attribute 'director'
-    df2['director'] = df2['crew'].apply(get_director)
+    df2['director'] = df2['crew'].apply(director_name)
 
     features = ['cast', 'keywords', 'genres']
     for feature in features:
