@@ -81,6 +81,7 @@ def dataset_preparation():
 
     # Create a word soup here as we want to create a count matrix later and apply cosine similarity
     df2['wordsoup'] = df2.apply(create_word_soup, axis=1)
-
+   
     # Return the final dataframe with our word soup
+    df2.to_csv('datasets/final_data.csv', index=False)
     return df2
