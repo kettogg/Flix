@@ -14,7 +14,6 @@ export const metadata = {
     title: "Movie Oasis",
     description:
       "A beautiful movie recommendation website made with NextJS 14 + Shadcn/ui",
-    images: "/ogp.png",
   },
   alternates: {
     canonical: "/",
