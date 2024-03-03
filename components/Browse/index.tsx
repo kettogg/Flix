@@ -12,7 +12,7 @@ interface Props {
   movies: Movie[];
 }
 
-export default function Browse({ count, movies }: Props) {
+export default function Browse({ movies }: Props) {
   const [query, setQuery] = useState("");
   const [filtered, setFiltered] = useState<Movie[]>([])
 
@@ -33,11 +33,11 @@ export default function Browse({ count, movies }: Props) {
       })
     } else {
       // Because more the requests to Api more slower! :)
-      getMoviesData(filtered, 0, 10).then((res) => {
+      getMoviesData(filtered, 0, 12).then((res) => {
         setFiltered(res)
       })
     }
-  }, [query])
+  }, [query, movies])
 
   const handleQueryChange = (el: any) => {
     setQuery(el.target.value.trim()); // Remove leading trailing spaces
@@ -45,11 +45,14 @@ export default function Browse({ count, movies }: Props) {
 
   return (
     <>
-      <Input
-        type="text"
-        onChange={handleQueryChange}
-        placeholder="Type your movie title here ..."
-      />
+      <div className="mt-8 mb-12 flex w-full max-w-sm sm:max-w-md md:max-w-lg items-center gap-1">
+        <Input
+          type="text"
+          onChange={handleQueryChange}
+          className="w-full rounded-full"
+          placeholder="Type your movie title here ..."
+        />
+      </div>
       <MovieGrid filtered={filtered} />
     </>
   );

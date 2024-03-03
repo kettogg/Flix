@@ -1,7 +1,9 @@
 export const siteConfig = {
-  name: "Movie Oasis",
+  name: "Flix Verse",
   url: "https://ui.shadcn.com",
   ogImage: "https://ui.shadcn.com/og.jpg",
+  author: "re1san",
+  authorPage: "https://github.com/re1san",
   description:
     "Movie Recommendation Website built beautifully with NextJS 14 and Shadcn.",
   links: {
