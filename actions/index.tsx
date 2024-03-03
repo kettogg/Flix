@@ -59,6 +59,7 @@ export const fetchMoviesData = async (title: string) => {
   return res.json();
 };
 
+// This can be called for one movie
 export const getTmdbData = async (title: string, id: number) => {
   const tmdbData = await fetchMoviesData(title)
   const first = tmdbData.results[0] // Take the first one as there are many results for title
@@ -85,7 +86,9 @@ export const getTmdbData = async (title: string, id: number) => {
   return movieData
 }
 
+// Can be called for number of movies
 export const getMoviesData = async (arr: ogTitle[], start: number, end: number ) => {
+  console.log(arr)
   let moviesData: Movie[] = [];
   for (let i = start; i < end; i++) {
     const movieData = await getTmdbData(arr[i].title, arr[i].id)

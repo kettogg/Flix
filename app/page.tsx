@@ -9,7 +9,8 @@ export default async function Home() {
 
   // getMoviesData will merge the title+id from Kaggle with other data from Tmdb Api
   // Finally made it to work T_T
-  const finalData = await getMoviesData(arrTitles, 0, 10);
+  // Also 0, 10 are necessary as we have a limit of 50 req/s
+  // const finalData = await getMoviesData(arrTitles, 0, 10);
   // console.log(finalData)
 
   return (

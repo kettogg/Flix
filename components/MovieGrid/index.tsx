@@ -10,8 +10,8 @@ export default function MovieGrid({ filtered }: Props) {
   return (
     <>
       <ol>
-        {filtered.map((movie) => (
-          <MovieCard key={movie.id} id={movie.id} title={movie.title} />
+        {filtered.map((movie : Movie) => (
+          <MovieCard key={movie.id} id={movie.id} title={movie.title} posterPath={movie.posterPath} />
         ))}
       </ol>
     </>

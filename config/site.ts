@@ -11,6 +11,7 @@ export const siteConfig = {
     titles: "http://127.0.0.1:5000/api/titles",
     recommendations: "http://127.0.0.1:5000/api/recommends",
     tmdb: "https://api.themoviedb.org/3/search/movie",
+    tmdbImage: "https://image.tmdb.org/t/p/original",
   },
 };
 
