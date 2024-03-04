@@ -28,7 +28,7 @@ export default function LoadMore({ movies }: Props) {
 
   return (
     <>
-      <section>
+      <section className="mt-5">
         <MovieGrid filtered={moviesData} />
         <div ref={ref}>
           {/* When we reach this div scrolling down load more */}
