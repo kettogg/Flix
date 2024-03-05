@@ -1,7 +1,0 @@
-www.akame.store {
-  redir http://akame.store{uri}
-}
-
-akame.store {
-  reverse_proxy localhost:8000
-}
