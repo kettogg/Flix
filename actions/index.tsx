@@ -20,7 +20,7 @@ export const fetchTitles = async () => {
 
 export const fetchRecommends = async (title: string) => {
   const res = await fetch(
-    `${siteConfig.apiUrl.recommendations}?title=${title}`,
+    `${siteConfig.apiUrl.recommendations}&title=${title}`,
     {
       method: "GET",
       cache: "no-store",
@@ -87,7 +87,7 @@ export const getTmdbData = async (title: string, id: number) => {
     voteAverage: first.vote_average,
     voteCount: first.vote_count,
   };
-  console.log(movieData)
+  // console.log(movieData)
   return movieData;
 };
 
