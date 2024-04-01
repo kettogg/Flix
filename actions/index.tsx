@@ -20,7 +20,7 @@ export const fetchTitles = async () => {
 
 export const fetchRecommends = async (title: string) => {
   const res = await fetch(
-    `${siteConfig.apiUrl.recommendations}&title=${title}`,
+    `${siteConfig.apiUrl.recommendations}?title=${title}`,
     {
       method: "GET",
       cache: "no-store",

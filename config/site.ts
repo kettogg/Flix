@@ -10,8 +10,8 @@ export const siteConfig = {
     github: "https://github.com/re1san/Movie-Recommender",
   },
   apiUrl: {
-    titles: `https://ketto.space/flix/api/titles?key=${process.env.FLIX_KEY}`,
-    recommendations: `https://ketto.space/flix/api/recommends?key=${process.env.FLIX_KEY}`,
+    titles: `http://127.0.0.1:8000/flix/api/titles`,
+    recommendations: `http://127.0.0.1:8000/flix/api/recommends`,
     tmdb: "https://api.themoviedb.org/3/search/movie",
     tmdbImage: "https://image.tmdb.org/t/p/original",
   },
